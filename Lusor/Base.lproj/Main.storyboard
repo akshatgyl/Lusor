@@ -1,25 +1,833 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Start View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="StartViewController" customModule="Lusor" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="background1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="meb-jm-sPp">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <animations/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lusor" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pDZ-oE-Fvu">
+                                <rect key="frame" x="97" y="136" width="127" height="74"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="39"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wF5-YK-n6E">
+                                <rect key="frame" x="110" y="305" width="100" height="60"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="25"/>
+                                <state key="normal" title="Start"/>
+                                <connections>
+                                    <action selector="start:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0qN-tb-Hhy"/>
+                                    <segue destination="1Jc-w8-UoI" kind="show" identifier="loggedIn" id="W2l-4i-c0b"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YgA-We-Zpm">
+                                <rect key="frame" x="121" y="381" width="78" height="41"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
+                                <state key="normal" title="Quit"/>
+                                <connections>
+                                    <action selector="quit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ppW-td-lVE"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="meb-jm-sPp" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="-30" id="FCZ-DA-9ou"/>
+                            <constraint firstItem="meb-jm-sPp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="-30" id="UYt-0D-vXL"/>
+                            <constraint firstAttribute="trailing" secondItem="meb-jm-sPp" secondAttribute="trailing" constant="-30" id="ZjI-6j-q0E"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="meb-jm-sPp" secondAttribute="bottom" constant="-30" id="dbd-Vr-wi7"/>
+                        </constraints>
                     </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="myBackgroundView" destination="meb-jm-sPp" id="ZDM-u0-5SS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="345" y="289"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="wsk-AN-r1I">
+            <objects>
+                <viewController id="vxk-dA-7WZ" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vZi-fX-H54"/>
+                        <viewControllerLayoutGuide type="bottom" id="sQO-0l-UsW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Tjl-D7-tQq">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WiR-V2-iVH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="651" y="-378"/>
+        </scene>
+        <!--Category View Controller-->
+        <scene sceneID="9Wd-Rp-QAd">
+            <objects>
+                <viewController id="1Jc-w8-UoI" customClass="CategoryViewController" customModule="Lusor" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KZo-ae-l1x"/>
+                        <viewControllerLayoutGuide type="bottom" id="waI-eb-KTd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8Iw-PY-fyy">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="background2.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="nq4-KH-bc8">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <animations/>
+                            </imageView>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JI5-WY-2zw">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <animations/>
+                                <color key="barTintColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Categories" id="gl5-zx-BbW">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="xGL-9G-ECc">
+                                            <color key="tintColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <action selector="back:" destination="1Jc-w8-UoI" id="JmM-5t-hef"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                                <connections>
+                                    <outlet property="delegate" destination="1Jc-w8-UoI" id="7ui-gh-Xgd"/>
+                                </connections>
+                            </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aMD-Gr-bB3">
+                                <rect key="frame" x="7" y="149" width="141" height="143"/>
+                                <animations/>
+                                <state key="normal" image="laughing crying emoji.png"/>
+                                <connections>
+                                    <segue destination="FBa-Yg-tVi" kind="presentation" modalTransitionStyle="crossDissolve" id="vxi-9c-Gue"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B0u-i4-CyH">
+                                <rect key="frame" x="169" y="160" width="131" height="77"/>
+                                <animations/>
+                                <state key="normal" title="Button" image="friends3.png"/>
+                                <connections>
+                                    <segue destination="FkY-45-X5X" kind="presentation" modalTransitionStyle="crossDissolve" id="Wwq-kg-QDT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tdG-4A-beZ">
+                                <rect key="frame" x="7" y="323" width="156" height="151"/>
+                                <animations/>
+                                <state key="normal" title="Button" image="music.png"/>
+                                <connections>
+                                    <segue destination="D7T-pr-uYl" kind="presentation" modalTransitionStyle="crossDissolve" id="A0t-pE-S5g"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v5M-NK-Srq">
+                                <rect key="frame" x="164" y="326" width="146" height="145"/>
+                                <animations/>
+                                <state key="normal" title="Button" image="gk.png"/>
+                                <connections>
+                                    <segue destination="biB-gJ-Pd2" kind="presentation" modalTransitionStyle="crossDissolve" id="MaT-zg-zOC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pzK-Ul-C1u">
+                                <rect key="frame" x="42" y="269" width="70" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
+                                <state key="normal" title="Jokes">
+                                    <color key="titleColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="FBa-Yg-tVi" kind="presentation" modalTransitionStyle="crossDissolve" id="aF4-3k-9ZC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ngA-7d-nVU">
+                                <rect key="frame" x="49" y="469" width="73" height="33"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
+                                <state key="normal" title="Music">
+                                    <color key="titleColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="D7T-pr-uYl" kind="presentation" modalTransitionStyle="crossDissolve" id="CQI-fb-T8B"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ywf-7d-Z51">
+                                <rect key="frame" x="169" y="470" width="136" height="32"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="14"/>
+                                <state key="normal" title="General Knowledge">
+                                    <color key="titleColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="biB-gJ-Pd2" kind="presentation" modalTransitionStyle="crossDissolve" id="VNB-0e-n32"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pzV-Wo-WIY">
+                                <rect key="frame" x="188" y="269" width="92" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="20"/>
+                                <state key="normal" title="Friends">
+                                    <color key="titleColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="FkY-45-X5X" kind="presentation" modalTransitionStyle="crossDissolve" id="14N-QX-ZEz"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="nq4-KH-bc8" secondAttribute="trailing" constant="-30" id="TjA-Y1-YcT"/>
+                            <constraint firstItem="nq4-KH-bc8" firstAttribute="top" secondItem="8Iw-PY-fyy" secondAttribute="top" constant="-30" id="Y8S-ML-gxg"/>
+                            <constraint firstItem="nq4-KH-bc8" firstAttribute="leading" secondItem="8Iw-PY-fyy" secondAttribute="leading" constant="-30" id="aoG-wV-nqQ"/>
+                            <constraint firstItem="waI-eb-KTd" firstAttribute="top" secondItem="nq4-KH-bc8" secondAttribute="bottom" constant="-30" id="j0s-Xj-1dH"/>
+                        </constraints>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="myBackgroundView" destination="nq4-KH-bc8" id="3xW-CP-waw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uWz-Pa-cB5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="840" y="289"/>
+        </scene>
+        <!--Jokes View Controller-->
+        <scene sceneID="OXK-iX-f7m">
+            <objects>
+                <viewController id="FBa-Yg-tVi" customClass="JokesViewController" customModule="Lusor" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1il-Rr-qrD"/>
+                        <viewControllerLayoutGuide type="bottom" id="Nei-d5-mi2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6aA-u6-VQs">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="background2.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="agE-yy-Kza">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <animations/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yKq-nB-D3E">
+                                <rect key="frame" x="20" y="161" width="280" height="74"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JFw-Xa-uUC">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <animations/>
+                                <color key="barTintColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <items>
+                                    <navigationItem title="Lusor" id="gwZ-Qb-ESf">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="Upc-z7-cvo">
+                                            <color key="tintColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <action selector="back:" destination="FBa-Yg-tVi" id="5w2-fh-80o"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Quit" id="jVH-bI-M8w">
+                                            <color key="tintColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <action selector="quit:" destination="FBa-Yg-tVi" id="BsW-M5-Rl7"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                                <connections>
+                                    <outlet property="delegate" destination="FBa-Yg-tVi" id="ECo-Od-iGL"/>
+                                </connections>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7TL-9M-0g2">
+                                <rect key="frame" x="27" y="103" width="47" height="33"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Points : 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="57i-SY-cfW">
+                                <rect key="frame" x="203" y="103" width="97" height="33"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.94901967050000002" green="0.98431378599999997" blue="0.93333339689999995" alpha="1" colorSpace="deviceRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YIE-aR-vkF" customClass="QuestionButton" customModule="Lusor" customModuleProvider="target">
+                                <rect key="frame" x="27" y="267" width="273" height="50"/>
+                                <animations/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.87450987099999999" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="aButton:" destination="FBa-Yg-tVi" eventType="touchUpInside" id="SVE-SJ-XKa"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fu4-KB-JR1" customClass="QuestionButton" customModule="Lusor" customModuleProvider="target">
+                                <rect key="frame" x="28" y="333" width="272" height="47"/>
+                                <animations/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.87450987099999999" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="bButton:" destination="FBa-Yg-tVi" eventType="touchUpInside" id="wF6-oT-mvZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2R0-57-v3j" customClass="QuestionButton" customModule="Lusor" customModuleProvider="target">
+                                <rect key="frame" x="28" y="452" width="272" height="52"/>
+                                <animations/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.87450987099999999" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="dButton:" destination="FBa-Yg-tVi" eventType="touchUpInside" id="GOK-98-uyB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9br-KQ-hge" customClass="QuestionButton" customModule="Lusor" customModuleProvider="target">
+                                <rect key="frame" x="28" y="391" width="272" height="50"/>
+                                <animations/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.87450987099999999" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="cButton:" destination="FBa-Yg-tVi" eventType="touchUpInside" id="QWP-2D-n6g"/>
+                                </connections>
+                            </button>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9pg-jy-Bay">
+                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                <animations/>
+                                <items>
+                                    <barButtonItem title="Ask friends" id="DO7-MH-TyI">
+                                        <color key="tintColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="askFriends:" destination="FBa-Yg-tVi" id="3ae-5h-1wY"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="XIa-jV-Ab9"/>
+                                    <barButtonItem title="Google this" id="vcY-k0-HgR">
+                                        <color key="tintColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="googleThis:" destination="FBa-Yg-tVi" id="cdr-5k-ZKe"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                                <color key="barTintColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </toolbar>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Nei-d5-mi2" firstAttribute="top" secondItem="agE-yy-Kza" secondAttribute="bottom" constant="-30" id="U1L-zS-drS"/>
+                            <constraint firstAttribute="trailing" secondItem="agE-yy-Kza" secondAttribute="trailing" constant="-30" id="Y7y-pB-qw2"/>
+                            <constraint firstItem="agE-yy-Kza" firstAttribute="leading" secondItem="6aA-u6-VQs" secondAttribute="leading" constant="-30" id="cGM-te-aZz"/>
+                            <constraint firstItem="agE-yy-Kza" firstAttribute="top" secondItem="6aA-u6-VQs" secondAttribute="top" constant="-30" id="eC1-oA-mTK"/>
+                        </constraints>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="AButton" destination="YIE-aR-vkF" id="GSc-O5-J6t"/>
+                        <outlet property="BButton" destination="Fu4-KB-JR1" id="5cs-pp-JGM"/>
+                        <outlet property="CButton" destination="9br-KQ-hge" id="3gM-hL-c3S"/>
+                        <outlet property="DButton" destination="2R0-57-v3j" id="H9r-Ct-MlA"/>
+                        <outlet property="pointsLabel" destination="57i-SY-cfW" id="xHx-Kg-y6F"/>
+                        <outlet property="questionLabel" destination="yKq-nB-D3E" id="oLd-5i-OTF"/>
+                        <outlet property="timerLabel" destination="7TL-9M-0g2" id="9Ia-ih-RCl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="emP-Mb-R1M" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1271" y="68"/>
+        </scene>
+        <!--Music View Controller-->
+        <scene sceneID="4jl-eJ-I89">
+            <objects>
+                <viewController id="D7T-pr-uYl" customClass="MusicViewController" customModule="Lusor" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QKQ-1f-AqC"/>
+                        <viewControllerLayoutGuide type="bottom" id="p6h-T5-jwi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Sxj-xh-15n">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="background2.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Sst-eN-vDc">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <animations/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Utc-ty-ewD">
+                                <rect key="frame" x="20" y="173" width="280" height="73"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.94901967050000002" green="0.98431378599999997" blue="0.93333339689999995" alpha="1" colorSpace="deviceRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bLz-PS-ctf" customClass="QuestionButton" customModule="Lusor" customModuleProvider="target">
+                                <rect key="frame" x="20" y="346" width="280" height="44"/>
+                                <animations/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.87450987099999999" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="bButton:" destination="D7T-pr-uYl" eventType="touchUpInside" id="LDw-v7-fuJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N3b-Iv-yD3" customClass="QuestionButton" customModule="Lusor" customModuleProvider="target">
+                                <rect key="frame" x="20" y="404" width="280" height="48"/>
+                                <animations/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.87450987099999999" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="cButton:" destination="D7T-pr-uYl" eventType="touchUpInside" id="Ah9-jF-guS"/>
+                                </connections>
+                            </button>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="csX-6Z-4SZ">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <animations/>
+                                <color key="barTintColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <items>
+                                    <navigationItem title="Lusor" id="gJ8-BC-gL7">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="Z8Z-gV-H5j">
+                                            <color key="tintColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <action selector="back:" destination="D7T-pr-uYl" id="pQ4-IT-jnb"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Quit" id="dcd-jB-VN9">
+                                            <color key="tintColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <action selector="quit:" destination="D7T-pr-uYl" id="OaG-J0-QMR"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                                <connections>
+                                    <outlet property="delegate" destination="D7T-pr-uYl" id="H5w-bv-BED"/>
+                                </connections>
+                            </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C5I-BS-8s5" customClass="QuestionButton" customModule="Lusor" customModuleProvider="target">
+                                <rect key="frame" x="20" y="465" width="280" height="52"/>
+                                <animations/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.87450987099999999" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="dButton:" destination="D7T-pr-uYl" eventType="touchUpInside" id="TjK-Jt-ZVg"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pfn-b5-DzP">
+                                <rect key="frame" x="30" y="102" width="47" height="33"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Points : 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gbz-CS-FOZ">
+                                <rect key="frame" x="203" y="102" width="97" height="33"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="auJ-2O-nR3">
+                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                <animations/>
+                                <items>
+                                    <barButtonItem title="Ask friends" id="7Hk-cV-yWT">
+                                        <color key="tintColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="askFriends:" destination="D7T-pr-uYl" id="YFo-GV-MY4"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="AD3-pz-Cwm"/>
+                                    <barButtonItem title="Google this" id="9QI-4T-6bM">
+                                        <color key="tintColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="googleThis:" destination="D7T-pr-uYl" id="VeY-fY-jof"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                                <color key="barTintColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </toolbar>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="taD-Sv-8Mf" customClass="QuestionButton" customModule="Lusor" customModuleProvider="target">
+                                <rect key="frame" x="20" y="280" width="280" height="52"/>
+                                <animations/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.87450987099999999" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="aButton:" destination="D7T-pr-uYl" eventType="touchUpInside" id="i2n-qY-bzS"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Sst-eN-vDc" firstAttribute="leading" secondItem="Sxj-xh-15n" secondAttribute="leading" constant="-30" id="4LN-no-lKs"/>
+                            <constraint firstItem="p6h-T5-jwi" firstAttribute="top" secondItem="Sst-eN-vDc" secondAttribute="bottom" constant="-30" id="gIt-cm-X5c"/>
+                            <constraint firstItem="Sst-eN-vDc" firstAttribute="top" secondItem="Sxj-xh-15n" secondAttribute="top" constant="-30" id="h2O-tZ-ZyC"/>
+                            <constraint firstAttribute="trailing" secondItem="Sst-eN-vDc" secondAttribute="trailing" constant="-30" id="kaN-VS-dFZ"/>
+                        </constraints>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="AButton" destination="taD-Sv-8Mf" id="IK5-jg-a8N"/>
+                        <outlet property="BButton" destination="bLz-PS-ctf" id="JyC-KE-0ot"/>
+                        <outlet property="CButton" destination="N3b-Iv-yD3" id="84k-hw-S3w"/>
+                        <outlet property="DButton" destination="C5I-BS-8s5" id="CE4-GK-41K"/>
+                        <outlet property="pointsLabel" destination="gbz-CS-FOZ" id="omK-Bn-Inz"/>
+                        <outlet property="questionTextfield" destination="Utc-ty-ewD" id="CWx-Cq-fgH"/>
+                        <outlet property="timerLabel" destination="Pfn-b5-DzP" id="NIE-3S-sdK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cMl-Lb-EQc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1271" y="713"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="ISO-lz-iVB">
+            <objects>
+                <viewController id="biB-gJ-Pd2" customClass="GKViewController" customModule="Lusor" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Tyx-23-4Tx"/>
+                        <viewControllerLayoutGuide type="bottom" id="jXG-ec-k4n"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0Cr-os-eWx">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="background2.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="9Wz-jy-BJd">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <animations/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="le4-Mx-AfO">
+                                <rect key="frame" x="20" y="166" width="280" height="85"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.94901967050000002" green="0.98431378599999997" blue="0.93333339689999995" alpha="1" colorSpace="deviceRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jqH-2o-zzP" customClass="QuestionButton" customModule="Lusor" customModuleProvider="target">
+                                <rect key="frame" x="20" y="344" width="280" height="45"/>
+                                <animations/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.87450987099999999" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="bButton:" destination="D7T-pr-uYl" eventType="touchUpInside" id="H3I-Mc-rao"/>
+                                    <action selector="bButton:" destination="biB-gJ-Pd2" eventType="touchUpInside" id="TtQ-g1-BKS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wtb-Yh-4tt" customClass="QuestionButton" customModule="Lusor" customModuleProvider="target">
+                                <rect key="frame" x="20" y="402" width="280" height="48"/>
+                                <animations/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.87450987099999999" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="cButton:" destination="biB-gJ-Pd2" eventType="touchUpInside" id="BAx-jC-nhb"/>
+                                    <action selector="cButton:" destination="D7T-pr-uYl" eventType="touchUpInside" id="MOa-fg-YlV"/>
+                                </connections>
+                            </button>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ULi-V7-8Zp">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <animations/>
+                                <color key="barTintColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <items>
+                                    <navigationItem title="Lusor" id="b8f-PU-Rqq">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="cvy-tg-kka">
+                                            <color key="tintColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <action selector="back:" destination="biB-gJ-Pd2" id="4hR-Kp-Ptg"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Quit" id="7t9-FL-dVH">
+                                            <color key="tintColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <action selector="quit:" destination="biB-gJ-Pd2" id="rx6-k4-MK6"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                                <connections>
+                                    <outlet property="delegate" destination="biB-gJ-Pd2" id="XVG-fL-Plw"/>
+                                </connections>
+                            </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="StN-js-rCY" customClass="QuestionButton" customModule="Lusor" customModuleProvider="target">
+                                <rect key="frame" x="20" y="463" width="280" height="51"/>
+                                <animations/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.87450987099999999" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="dButton:" destination="biB-gJ-Pd2" eventType="touchUpInside" id="EP2-wf-Suc"/>
+                                    <action selector="dButton:" destination="D7T-pr-uYl" eventType="touchUpInside" id="a0B-Yh-CQz"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G1P-gm-aR6">
+                                <rect key="frame" x="20" y="105" width="47" height="33"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Points : 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tM9-qN-v5j">
+                                <rect key="frame" x="203" y="105" width="97" height="33"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uay-xG-IWc">
+                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                <animations/>
+                                <items>
+                                    <barButtonItem title="Ask friends" id="Cyr-fO-FqS">
+                                        <color key="tintColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="askFriends:" destination="biB-gJ-Pd2" id="1EB-76-g4w"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Vz4-bX-FiO"/>
+                                    <barButtonItem title="Google this" id="bvg-PA-E7s">
+                                        <color key="tintColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="googleThis:" destination="biB-gJ-Pd2" id="2Tb-gY-rGt"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                                <color key="barTintColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </toolbar>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rc8-EO-BoF" customClass="QuestionButton" customModule="Lusor" customModuleProvider="target">
+                                <rect key="frame" x="20" y="278" width="280" height="51"/>
+                                <animations/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.87450987099999999" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="aButton:" destination="biB-gJ-Pd2" eventType="touchUpInside" id="1eH-IL-QIq"/>
+                                    <action selector="aButton:" destination="D7T-pr-uYl" eventType="touchUpInside" id="d1S-n9-pnp"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="jXG-ec-k4n" firstAttribute="top" secondItem="9Wz-jy-BJd" secondAttribute="bottom" constant="-30" id="H1n-qe-TzC"/>
+                            <constraint firstItem="9Wz-jy-BJd" firstAttribute="top" secondItem="0Cr-os-eWx" secondAttribute="top" constant="-30" id="L0O-XP-ErT"/>
+                            <constraint firstItem="9Wz-jy-BJd" firstAttribute="leading" secondItem="0Cr-os-eWx" secondAttribute="leading" constant="-30" id="Z83-Xw-feD"/>
+                            <constraint firstAttribute="trailing" secondItem="9Wz-jy-BJd" secondAttribute="trailing" constant="-30" id="kth-iY-zta"/>
+                        </constraints>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="AButton" destination="rc8-EO-BoF" id="kqV-P0-6q6"/>
+                        <outlet property="BButton" destination="jqH-2o-zzP" id="tTc-0k-Zpa"/>
+                        <outlet property="CButton" destination="wtb-Yh-4tt" id="KZi-ej-PbO"/>
+                        <outlet property="DButton" destination="StN-js-rCY" id="65Y-Ri-jfz"/>
+                        <outlet property="pointsLabel" destination="tM9-qN-v5j" id="3cL-c9-p9Y"/>
+                        <outlet property="questionLabel" destination="le4-Mx-AfO" id="DOH-8P-WiD"/>
+                        <outlet property="timerLabel" destination="G1P-gm-aR6" id="3vQ-s9-63s"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pnK-QN-TY8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1645" y="713"/>
+        </scene>
+        <!--Friends View Controller-->
+        <scene sceneID="or3-he-VE2">
+            <objects>
+                <viewController id="FkY-45-X5X" customClass="FriendsViewController" customModule="Lusor" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lic-jY-kbv"/>
+                        <viewControllerLayoutGuide type="bottom" id="oh4-fu-Jff"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="san-zv-EAk">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="background2.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Dmh-N9-hjD">
+                                <rect key="frame" x="0.0" y="-5" width="320" height="573"/>
+                                <animations/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MaA-00-Sp0">
+                                <rect key="frame" x="20" y="166" width="280" height="73"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bfi-jq-Xfv" customClass="QuestionButton" customModule="Lusor" customModuleProvider="target">
+                                <rect key="frame" x="20" y="270" width="280" height="51"/>
+                                <animations/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.87450987099999999" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="aButton:" destination="FkY-45-X5X" eventType="touchUpInside" id="oYu-Xd-Q9j"/>
+                                    <action selector="aButton:" destination="FBa-Yg-tVi" eventType="touchUpInside" id="zdA-wZ-dSi"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MwT-33-Eev" customClass="QuestionButton" customModule="Lusor" customModuleProvider="target">
+                                <rect key="frame" x="22" y="329" width="278" height="52"/>
+                                <animations/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.87450987099999999" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="aButton:" destination="FBa-Yg-tVi" eventType="touchUpInside" id="ywg-Co-bAG"/>
+                                    <action selector="bButton:" destination="FkY-45-X5X" eventType="touchUpInside" id="LkR-AS-oUd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RDg-ZB-c9f" customClass="QuestionButton" customModule="Lusor" customModuleProvider="target">
+                                <rect key="frame" x="20" y="389" width="280" height="57"/>
+                                <animations/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.87450987099999999" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="aButton:" destination="FBa-Yg-tVi" eventType="touchUpInside" id="tAV-gd-7vS"/>
+                                    <action selector="cButton:" destination="FkY-45-X5X" eventType="touchUpInside" id="x49-YO-fKf"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o9P-OC-xZq" customClass="QuestionButton" customModule="Lusor" customModuleProvider="target">
+                                <rect key="frame" x="22" y="459" width="278" height="44"/>
+                                <animations/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.87450987099999999" green="0.0" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="aButton:" destination="FBa-Yg-tVi" eventType="touchUpInside" id="oiU-cC-e8B"/>
+                                    <action selector="dButton:" destination="FkY-45-X5X" eventType="touchUpInside" id="93M-HK-uaL"/>
+                                </connections>
+                            </button>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CAc-E0-syN">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <animations/>
+                                <color key="barTintColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <items>
+                                    <navigationItem title="Lusor" id="rCX-Zd-slS">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="G2x-Ra-cq7">
+                                            <color key="tintColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <action selector="back:" destination="FkY-45-X5X" id="FhP-gb-Iay"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Quit" id="xN9-yF-CUi">
+                                            <color key="tintColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <connections>
+                                                <action selector="quit:" destination="FkY-45-X5X" id="zNu-de-FAc"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                                <connections>
+                                    <outlet property="delegate" destination="FkY-45-X5X" id="eCP-9c-zcm"/>
+                                </connections>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qAX-fq-KV4">
+                                <rect key="frame" x="22" y="97" width="47" height="33"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Points : 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Wb-0R-9fv">
+                                <rect key="frame" x="203" y="97" width="97" height="33"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BGT-Ns-hVg">
+                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                <animations/>
+                                <items>
+                                    <barButtonItem title="Ask friends" id="j3F-R0-Evy">
+                                        <color key="tintColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="askFriends:" destination="FkY-45-X5X" id="r6J-7Y-Uej"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="u6Y-Xe-p76"/>
+                                    <barButtonItem title="Google this" id="6QE-lj-qbw">
+                                        <color key="tintColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="googleThis:" destination="FkY-45-X5X" id="mkt-GQ-euz"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                                <color key="barTintColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </toolbar>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Dmh-N9-hjD" firstAttribute="leading" secondItem="san-zv-EAk" secondAttribute="leading" constant="-30" id="4wJ-r2-RfJ"/>
+                            <constraint firstItem="oh4-fu-Jff" firstAttribute="top" secondItem="Dmh-N9-hjD" secondAttribute="bottom" constant="-30" id="P8p-OZ-WEX"/>
+                            <constraint firstItem="Dmh-N9-hjD" firstAttribute="top" secondItem="san-zv-EAk" secondAttribute="top" constant="-30" id="bmw-Ef-ubW"/>
+                            <constraint firstAttribute="trailing" secondItem="Dmh-N9-hjD" secondAttribute="trailing" constant="-30" id="hUB-4B-nEo"/>
+                        </constraints>
+                    </view>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="AButton" destination="bfi-jq-Xfv" id="kZt-XF-qjN"/>
+                        <outlet property="BButton" destination="MwT-33-Eev" id="aVR-8r-E9Y"/>
+                        <outlet property="CButton" destination="RDg-ZB-c9f" id="ffe-B3-Qmx"/>
+                        <outlet property="DButton" destination="o9P-OC-xZq" id="VVO-8S-WKc"/>
+                        <outlet property="pointsLabel" destination="5Wb-0R-9fv" id="rGj-qN-cnX"/>
+                        <outlet property="questionLabel" destination="MaA-00-Sp0" id="8fx-c7-A8B"/>
+                        <outlet property="timerLabel" destination="qAX-fq-KV4" id="bf9-mS-olA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9hD-tw-XbJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1645" y="68"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="background1.jpg" width="640" height="1136"/>
+        <image name="background2.jpg" width="236" height="419"/>
+        <image name="friends3.png" width="400" height="155"/>
+        <image name="gk.png" width="500" height="500"/>
+        <image name="laughing crying emoji.png" width="200" height="200"/>
+        <image name="music.png" width="512" height="512"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="A0t-pE-S5g"/>
+        <segue reference="VNB-0e-n32"/>
+        <segue reference="vxi-9c-Gue"/>
+        <segue reference="14N-QX-ZEz"/>
+    </inferredMetricsTieBreakers>
 </document>
